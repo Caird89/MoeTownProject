@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-// Mongoose
+//Mongoose
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_URI, {
   auth: {
@@ -9,7 +9,7 @@ mongoose.connect(process.env.DB_URI, {
   },
   useNewUrlParser: true
 }).catch(err => console.error(`ERROR: ${err}`));
-// End Mongoose
+//end Mongoose
 
 const express = require('express');
 const path = require('path');
