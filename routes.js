@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const pagesRoutes = require('./routes/pages')
+const pagesRoutes = require('./routes/pages');
 const tasksRoutes = require('./routes/tasks');
 const authorsRoutes = require('./routes/authors');
 const sessionsRoutes = require('./routes/sessions');
