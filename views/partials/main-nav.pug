@@ -1,0 +1,28 @@
+nav.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand(href='/') The List
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        a.nav-link(href='/') Home
+      li.nav-item
+        a.nav-link(href='/About') About
+      if isAuthenticated
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Tasks
+          .dropdown-menu
+            a.dropdown-item(href='/tasks') Tasks
+            a.dropdown-item(href='/tasks/new') New Tasks
+      if !isAuthenticated
+        li.nav-item
+          a.nav-link(href='/authors/new') Register
+        li.nav-item
+          a.nav-link(href='/login') Login
+      if isAuthenticated
+        li.nav-item
+          form.nav-destroy(action=`/logout`, method="POST")
+            input.destroy(type="submit", value="Logout")
+      li.nav-item
+        a.nav-link(href='/Contact') Contact
